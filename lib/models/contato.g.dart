@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'contato.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class ContatoAdapter extends TypeAdapter<Contato> {
+  @override
+  final int typeId = 0;
+
+  @override
+  Contato read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Contato()
+      .._pathPhoto = fields[0] as String
+      .._nome = fields[1] as String
+      .._numero = fields[2] as String;
+  }
+
+  @override
+  void write(BinaryWriter writer, Contato obj) {
+    writer
+      ..writeByte(3)
+      ..writeByte(0)
+      ..write(obj._pathPhoto)
+      ..writeByte(1)
+      ..write(obj._nome)
+      ..writeByte(2)
+      ..write(obj._numero);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ContatoAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
